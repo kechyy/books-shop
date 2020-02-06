@@ -1,0 +1,91 @@
+
+
+<!-- Toolbar -->
+<header>
+  <div class="container-fluid main-top-header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img
+    width="40"
+    alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+  />
+    <span class="text-white"><strong>BooksToRead</strong></span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        <form class="form-inline my-2 my-lg-0 ml-auto ">
+          <div class="input-group">
+            <input type="text" class="form-control search-transition" placeholder="Search this blog" *ngIf="search">
+            <div class="input-group-append">
+              <button class="btn text-white" type="button" (click)="toggleSearch()" >
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item text-white"> <a class="nav-link text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-shopping-cart"></span><i style="font-size:12px; padding:3px; background:#F00">{{cart}}</i><strong>Cart</strong></a></li>
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fa fa-shopping-cart"></span><i style="font-size:12px; padding:3px; background:#F00">{{cart}}</i><strong>Cart</strong></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <div class="row">
+                <div class="col-md-6"></div>
+              </div>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link text-white" href="#">Users</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link text-white" href="#">Books</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled text-white" href="#" tabindex="-1" aria-disabled="true">Submit a Book</a>
+          </li>
+         
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<div class="content" role="main">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center">
+        <img src="../assets/images/1.jpg" alt="A bigger Price" class="mw-100">
+        <ngb-rating [(rate)]="currentRate" max="5" rate="3.75" fill="100" class="text-"></ngb-rating>
+        <h5>Joust Duffle Bag</h5>
+        <h6  class="text-danger">$60.00</h6>
+        <button class="btn btn-outline-secondary" (click)="addItems()">Add to Cart</button>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="../assets/images/3.jpg" alt="A bigger Price"  class="mw-100">
+        <ngb-rating [(rate)]="currentRate" max="5" rate="3.75" fill="100" class="text-"></ngb-rating>
+        <h5>Joust Duffle Bag</h5>
+        <h6  class="text-danger">$60.00</h6>
+        <button class="btn btn-outline-secondary" (click)="addItems()">Add to Cart</button>
+      </div>
+      <div class="col-md-4 text-center">
+        <img src="../assets/images/5.jpg" alt="A bigger Price"  class="mw-100">
+        <ngb-rating [(rate)]="currentRate" max="5" rate="3.75" fill="100" class="text-"></ngb-rating>
+        <h5>Joust Duffle Bag</h5>
+        <h6 class="text-danger">$60.00</h6>
+        <button class="btn btn-outline-secondary">Add to Cart</button>
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+<router-outlet></router-outlet>

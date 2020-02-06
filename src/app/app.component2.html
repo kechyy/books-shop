@@ -1,0 +1,58 @@
+
+
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="40"
+    alt="Angular Logo"
+    src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+  />
+  <span>BooksToRead</span>
+    <div class="spacer"></div>
+   <ul class="main-menu">
+     <li><a href="" style="color: #ffffff;">Home</a></li>
+     <li><a href="" style="color: #ffffff;">Users</a></li>
+     <li><a href="" style="color: #ffffff;">Books</a></li>
+     <li><a href="" style="color: #ffffff;">Submit a Book</a></li>
+   </ul> 
+</div>
+
+<div class="content" role="main">
+  <!-- <h1 *ngIf="title; else elseBlock">It worked...</h1>
+  <ng-template  #elseBlock><h2>It didn't work</h2> </ng-template>
+  <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>  
+    show = {{show}}  
+  <br>  
+  <div *ngIf="show">Text to show</div> 
+  <ul>
+    <li *ngFor="let fruit of fruits; index as i"> {{ i }} {{fruit}}</li><br><br>
+    <li *ngFor="let fruit of fruits; first as f"> {{ f }} {{fruit}}</li><br><br>
+    <li *ngFor="let fruit of fruits; last as l"> {{ l }} {{fruit}}</li><br><br>
+    <li *ngFor="let fruit of fruits; odd as o"> {{ o }} {{fruit}}</li><br><br>
+    <li *ngFor="let fruit of fruits; even as e"> {{ e }} {{fruit}}</li><br><br>
+  </ul>
+  <select>
+    <option *ngFor="let fruit of fruits">{{fruit}}</option>
+  </select> -->
+  <select [(ngModel)]="selectedValue">  
+    <option *ngFor="let item of items;" [value]="item.name">{{item.name}}</option>  
+</select>  
+<div class='row' [ngSwitch]="selectedValue">  
+    <div *ngSwitchCase="'One'">One is Pressed</div>  
+    <div *ngSwitchCase="'Two'">Two is Selected</div>  
+    <div *ngSwitchDefault>Default Option</div>  
+</div>  
+<input type="text" [(ngModel)]="textView" [value]="textView">
+<input type="text" [(ngModel)]="inputText">
+<p>{{textView}}</p>
+<p>{{countText()}}</p>
+<button (click)="addNumber()">Add</button>
+  <!-- Footer -->
+  <footer>
+  </footer>
+
+</div>
+
+
+
+<router-outlet></router-outlet>
